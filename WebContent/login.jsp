@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib tagdir="/WEB-INF/tags/" prefix="tag"%>
 
@@ -37,7 +38,7 @@
                     <label for="senha">Password</label>
                   </div>
                 </div>
-                <p>Não possui conta? <a href="cadastro.jsp">clique aqui!</a></p>
+                <p>NÃ£o possui conta? <a href="cadastro.jsp">clique aqui!</a></p>
                 <div class="row center-align">
                     <input class="waves-effect waves-light btn indigo darken-4" type="submit" value="Login" />
 

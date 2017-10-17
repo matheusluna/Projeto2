@@ -162,6 +162,12 @@ public class DaoTcc implements DaoTccInterface{
 	@Override
 	public Tcc read(String titulo) throws UnknownHostException {
 		// TODO Auto-generated method stub
+		List<Tcc> lista = listar();
+		for(Tcc t : lista) {
+			if(t.getTitulo().equals(titulo)) {
+				return t;
+			}
+		}
 		return null;
 	}
 

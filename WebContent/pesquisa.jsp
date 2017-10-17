@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <html>
   <head>
@@ -18,14 +17,14 @@
       <ul id="tabs-swipe-demo" class="tabs tabs-fixed-width">
         <li class="tab col s3"><a href="#test-swipe-1">Autor</a></li>
         <li class="tab col s3"><a class="active" href="#test-swipe-2">Ano</a></li>
-        <li class="tab col s3"><a href="#test-swipe-3">Conte�do</a></li>
+        <li class="tab col s3"><a href="#test-swipe-3">Conteúdo</a></li>
       </ul>
       <div id="test-swipe-1" class="col s12">
           <div class="container">
           	<c:forEach var="tcc" items="${listaAutor}">
           		<ul class="collection">
 	              <li class="collection-item avatar">
-	                <span class="title"><a href="Tcc?titulo=${tcc.titulo}">T�tulo: ${tcc.titulo}</a></span>
+	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
 	                <p>Autor: ${tcc.autor} <br>
 	                 Orientados: ${tcc.orientador}
 	                </p>
@@ -41,9 +40,9 @@
           	<c:forEach var="tcc" items="${listaAno}">
           		<ul class="collection">
 	              <li class="collection-item avatar">
-	                <span class="title"><a href="Tcc?titulo=${tcc.titulo}">${tcc.titulo}</a></span>
-	                <p>${tcc.autor} <br>
-	                   ${tcc.orientador}
+	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
+	                <p>Autor: ${tcc.autor} <br>
+	                   Orientados: ${tcc.orientador}
 	                </p>
 	                <a href="#!" class="secondary-content">Ano: ${tcc.ano}</a>
 	              </li>
@@ -57,9 +56,9 @@
           	<c:forEach var="tcc" items="${listaConteudo}">
           		<ul class="collection">
 	              <li class="collection-item avatar">
-	                <span class="title"><a href="Tcc?titulo=${tcc.titulo}">${tcc.titulo}</a></span>
-	                <p>${tcc.autor} <br>
-	                   ${tcc.orientador}
+	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
+	                <p>Autor: ${tcc.autor} <br>
+	                   Orientados: ${tcc.orientador}
 	                </p>
 	                <a href="#!" class="secondary-content">Ano: ${tcc.ano}</a>
 	              </li>
