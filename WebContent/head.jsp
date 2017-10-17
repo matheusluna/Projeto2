@@ -34,7 +34,7 @@
 
     <!--Menu de pesquisa-->
     <ul id="slide-out2" class="side-nav">
-      <form class="" action="index.html" method="post">
+      <form class="" action="Pesquisa" method="post">
         <div class="row">
           <div class="input-field col s12">
             <input type="text" name="pesquisa" id="pesquisa" value="">
