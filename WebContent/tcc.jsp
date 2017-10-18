@@ -15,13 +15,27 @@
 		<p>Resumo:<br> ${tcc.resumo}</p>
 		<p>Ano: ${tcc.ano}</p>
 		<p>Arquivo: <a href="${tcc.caminho}" target="_blank">Clique aqui</a></p>
-		<h5>MaisTccs Orientados por ${tcc.orientador}</h5>
+		<h5>Mais Tccs Orientados por ${tcc.orientador}</h5>
 		<div class="carousel">
 			<c:forEach var="trabalho" items="${listaOrientador}">
 				<div class="carousel-item">
 			    	<div class="card grey lighten-4">
 			            <div class="card-content">
 			              <span class="card-title">Titulo: ${trabalho.titulo} <br> Autor: ${trabalhor.autor}</span>
+			              <p>Ano: ${trabalho.ano}</p>
+			            </div>
+			          </div>
+			    </div>
+			</c:forEach>
+		    
+		  </div>
+		  <h5>Mais Tccs na área de ${tcc.area}</h5>
+		<div class="carousel">
+			<c:forEach var="trabalho" items="${listaArea}">
+				<div class="carousel-item">
+			    	<div class="card grey lighten-4">
+			            <div class="card-content">
+			              <span class="card-title"><a href="PaginaTcc?titulo=${trabalho.titulo}">Titulo: ${trabalho.titulo}</a> <br> Autor: ${trabalhor.autor}</span>
 			              <p>Ano: ${trabalho.ano}</p>
 			            </div>
 			          </div>
