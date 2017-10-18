@@ -1,34 +1,21 @@
-<%@ page language="java" contentType="text/html"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="pt-br">
-  <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
-    <link href="css/configuracao.css" rel="stylesheet" type="text/css">
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-
-  <body>
-    <div class="navbar-fixed">
-      <nav>
-        <div class="nav-wrapper cyan darken-4">
-          <a href="login.jsp" class="brand-logo"><i class="material-icons">arrow_back</i>Cadastro</a>
-        </div>
-      </nav>
-    </div>
-
-    <div class="container">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<jsp:include page="head.jsp"></jsp:include>
+	<div class="container">
       <div class="row">
-        <form id="formCliente" class="form-horizontal templatemo-login-form-2" enctype="multipart/form-data" role="form" action="Cadastro" method="post">
+        <form id="formCliente" class="form-horizontal templatemo-login-form-2" enctype="multipart/form-data" role="form" action="AtualizaUsuario" method="post">
             
            <div class="row">
 				<div class="btn">
 	                <span>Foto</span>
-	                <input name="foto" type="file">
+	                <input name="foto" type="file" value="${usuario.foto}">
 	              </div>
 	              <div class="file-path-wrapper">
 	                <input name="foto" class="file-path validate" type="text">
@@ -36,18 +23,14 @@
 
             </div>
           <div class="row">
-            <div class="input-field col s6">
-              <input id="nome" type="text" name="nome" value="" required>
+            <div class="input-field col s12">
+              <input id="nome" type="text" name="nome" value="${usuario.nome}" required>
               <label for="nome">Nome</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="email" type="text" name="email" value="" required>
-              <label for="email">E-mail</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="senha" type="password" name="senha" value="" required>
+              <input id="senha" type="password" name="senha" value="${usuario.senha}" required>
               <label for="senha">Senha</label>
             </div>
             <div class="input-field col s6">
@@ -57,7 +40,7 @@
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="telefone" type="tel" name="telefone" value="">
+              <input id="telefone" type="tel" name="telefone" value="${usuario.telefone}">
               <label for="telefone">Telefone</label>
             </div>
             <div class="input-field col s6">
@@ -79,5 +62,5 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
     <script type="text/javascript" src="js/plugin.js"></script>
-  </body>
+</body>
 </html>

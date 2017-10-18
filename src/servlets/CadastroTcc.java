@@ -48,6 +48,8 @@ public class CadastroTcc extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		DaoTcc dao = new DaoTcc();
 		DaoTccNeo4j neo = new DaoTccNeo4j();
 		response.setContentType("text/html; charset=UTF-8");

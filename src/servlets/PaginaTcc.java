@@ -33,6 +33,8 @@ public class PaginaTcc extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 		String titulo = request.getParameter("titulo");
 		DaoTcc dao = new DaoTcc();
 		DaoTccNeo4j neo = new DaoTccNeo4j();
