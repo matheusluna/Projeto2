@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.tika.exception.TikaException;
 
 import banco.DaoTcc;
+import banco.DaoTccNeo4j;
 import conversores.Conversor;
 import entidades.Tcc;
 import jdk.internal.org.xml.sax.SAXException;
@@ -48,8 +49,8 @@ public class CadastroTcc extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		DaoTcc dao = new DaoTcc();
-		
-		
+		DaoTccNeo4j neo = new DaoTccNeo4j();
+		response.setContentType("text/html;charset=UTF-8");
 		try {
 			UpLoadPdf pdf = new UpLoadPdf();
 			String autor = request.getParameter("autor");
@@ -64,6 +65,7 @@ public class CadastroTcc extends HttpServlet {
 			String texto = leitor.getText();
 			Tcc tcc = new Tcc(autor, orientador, palavrasChave, ano, resumo, area, titulo, caminho, texto);
 			if(dao.create(tcc)) {
+				neo.create(tcc);
 				request.setAttribute("mensagem", "<script>alert('Tcc cadastrado com sucesso!')</script>");
 				request.getRequestDispatcher("principal.jsp").forward(request, response);;
 			}else {

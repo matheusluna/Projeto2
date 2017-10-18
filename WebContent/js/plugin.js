@@ -26,4 +26,5 @@ $ (document).ready(function() {
     format: 'dd/mm/yyyy'
   });
   $('select').material_select();
+  $('.carousel').carousel();
 });

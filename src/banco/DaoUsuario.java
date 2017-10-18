@@ -59,7 +59,7 @@ public class DaoUsuario implements DaoUsuarioInterface{
 		boolean resultado = !stmt.execute();
 		stmt.close();
 		con.close();
-		return false;
+		return resultado;
 	}
 
 	@Override

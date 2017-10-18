@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import banco.DaoTcc;
+import banco.DaoTccNeo4j;
 import entidades.Tcc;
 
 /**
@@ -32,8 +35,13 @@ public class PaginaTcc extends HttpServlet {
 		// TODO Auto-generated method stub
 		String titulo = request.getParameter("titulo");
 		DaoTcc dao = new DaoTcc();
+		DaoTccNeo4j neo = new DaoTccNeo4j();
 		Tcc tcc = dao.read(titulo);
-		request.setAttribute("tcc", tcc);
+		List<Tcc> listaOrientador = neo.listarOrientador(tcc.getOrientador());
+		List<Tcc> listaArea = neo.listarArea(tcc.getArea());
+ 		request.setAttribute("tcc", tcc);
+ 		request.setAttribute("listaOrientador", listaOrientador);
+ 		request.setAttribute("listaArea", listaArea);
 		request.getRequestDispatcher("tcc.jsp").forward(request, response);
 	}
 
