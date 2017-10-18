@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib  prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
 <%@taglib tagdir="/WEB-INF/tags/" prefix="tag"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="pt-br">
@@ -51,75 +52,150 @@
       </form>
     </ul>
 
+	<c:choose>
+		<c:when test="${tcc} eq null">
+			<!-- Modal de cadastro de tcc -->
+		    <div id="modal1" class="modal">
+		      <div class="modal-content">
+		        <h4>Cadastro Tcc</h4>
+		        <form action="CadastroTcc" enctype="multipart/form-data" method="post">
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="text" name="titulo" id="titulo" value="">
+		              <label for="titulo">Título</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <input type="text" name="autor" id="autor" value="">
+		              <label for="autor">Autor</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="text" name="orientador" id="orientador" value="">
+		              <label for="orientador">Orientador</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <input type="text" name="palavrasChave" id="palavraChave" value="">
+		              <label for="palavraChave">Palavras-chave</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s12">
+		              <textarea id="textarea1" name="resumo" class="materialize-textarea"></textarea>
+		              <label for="textarea1">Resumo</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="number" name="ano" id="ano" value="">
+		              <label for="ano">Ano</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <select name="area">
+		                <option value="Banco de Dados">Banco de Dados</option>
+		                <option value="Engenharia de Software">Engenharia de Software</option>
+		                <option value="Redes">Redes</option>
+		                <option value="Segurança">Segurança</option>
+		                <option value="Arquitetura de Sistemas">Arquitetura de Sistemas</option>
+		                <option value="Hardware">Hardware</option>
+		                <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+		              </select>
+		              <label>Área de conhecimento</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="file-field input-field">
+		              <div class="btn">
+		                <span>Tcc</span>
+		                <input type="file" name="pdf">
+		              </div>
+		              <div class="file-path-wrapper">
+		                <input class="file-path validate" type="text">
+		              </div>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="modal-footer">
+		              <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="" value="Salvar">
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+		    </div>
+		</c:when>
+		<c:otherwise>
+			<!-- Modal de cadastro de tcc -->
+		    <div id="modal1" class="modal">
+		      <div class="modal-content">
+		        <h4>Cadastro Tcc</h4>
+		        <form action="CadastroTcc" enctype="multipart/form-data" method="post">
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="text" name="titulo" id="titulo" value="${tcc.titulo}">
+		              <label for="titulo">Título</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <input type="text" name="autor" id="autor" value="${tcc.autor}">
+		              <label for="autor">Autor</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="text" name="orientador" id="orientador" value="${tcc.orientador}">
+		              <label for="orientador">Orientador</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <input type="text" name="palavrasChave" id="palavraChave" value="${tcc.palavrasChave}">
+		              <label for="palavraChave">Palavras-chave</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s12">
+		              <textarea id="textarea1" name="resumo" class="materialize-textarea" value="${tcc.resumo}"></textarea>
+		              <label for="textarea1">Resumo</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="input-field col s6">
+		              <input type="number" name="ano" id="ano" value="${tcc.ano}">
+		              <label for="ano">Ano</label>
+		            </div>
+		            <div class="input-field col s6">
+		              <select name="area" value="${tcc.area}">
+		                <option value="Banco de Dados">Banco de Dados</option>
+		                <option value="Engenharia de Software">Engenharia de Software</option>
+		                <option value="Redes">Redes</option>
+		                <option value="Segurança">Segurança</option>
+		                <option value="Arquitetura de Sistemas">Arquitetura de Sistemas</option>
+		                <option value="Hardware">Hardware</option>
+		                <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+		              </select>
+		              <label>Área de conhecimento</label>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="file-field input-field">
+		              <div class="btn">
+		                <span>Tcc</span>
+		                <input type="file" name="pdf" value="${tcc.caminho}">
+		              </div>
+		              <div class="file-path-wrapper">
+		                <input class="file-path validate" type="text">
+		              </div>
+		            </div>
+		          </div>
+		          <div class="row">
+		            <div class="modal-footer">
+		              <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="" value="Salvar">
+		            </div>
+		          </div>
+		        </form>
+		      </div>
+		    </div>
+		</c:otherwise>
+	</c:choose>
 
-    <!-- Modal de cadastro de tcc -->
-    <div id="modal1" class="modal">
-      <div class="modal-content">
-        <h4>Cadastro Tcc</h4>
-        <form action="CadastroTcc" enctype="multipart/form-data" method="post">
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="text" name="titulo" id="titulo" value="">
-              <label for="titulo">Título</label>
-            </div>
-            <div class="input-field col s6">
-              <input type="text" name="autor" id="autor" value="">
-              <label for="autor">Autor</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="text" name="orientador" id="orientador" value="">
-              <label for="orientador">Orientador</label>
-            </div>
-            <div class="input-field col s6">
-              <input type="text" name="palavrasChave" id="palavraChave" value="">
-              <label for="palavraChave">Palavras-chave</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <textarea id="textarea1" name="resumo" class="materialize-textarea"></textarea>
-              <label for="textarea1">Resumo</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="input-field col s6">
-              <input type="number" name="ano" id="ano" value="">
-              <label for="ano">Ano</label>
-            </div>
-            <div class="input-field col s6">
-              <select name="area">
-                <option value="Banco de Dados">Banco de Dados</option>
-                <option value="Engenharia de Software">Engenharia de Software</option>
-                <option value="Redes">Redes</option>
-                <option value="Segurança">Segurança</option>
-                <option value="Arquitetura de Sistemas">Arquitetura de Sistemas</option>
-                <option value="Hardware">Hardware</option>
-                <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
-              </select>
-              <label>Área de conhecimento</label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="file-field input-field">
-              <div class="btn">
-                <span>Tcc</span>
-                <input type="file" name="pdf">
-              </div>
-              <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="modal-footer">
-              <input class="modal-action modal-close waves-effect waves-green btn-flat" type="submit" name="" value="Salvar">
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
+    
 
     <!--Barra de menu-->
     <div class="navbar-fixed">
