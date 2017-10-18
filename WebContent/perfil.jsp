@@ -34,7 +34,6 @@
         <div class="col s3">
           <ul class="collection">
             <li class="collection-item"><a href="editaPerfil.jsp">Editar perfil</a></li>
-            <li class="collection-item">Excluir conta</li>
           </ul>
         </div>
       </div>

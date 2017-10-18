@@ -68,6 +68,7 @@ public class AtualizaUsuario extends HttpServlet {
 		Usuario usuario2 = new Usuario(nome, email, senha, nascimento, telefone, sexo, foto);
 		try {
 			if(dao.update(usuario2)) {
+				session.setAttribute("usuario", usuario2);
 				request.setAttribute("mensagem", "<script>alert('Usuario atualizado com sucesso!')</script>");
 				request.getRequestDispatcher("perfil.jsp").forward(request, response);
 			}else {
