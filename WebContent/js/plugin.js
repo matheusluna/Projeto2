@@ -1,6 +1,8 @@
 $ (document).ready(function() {
-  $(".button-collapse").sideNav();
-  $(".button-collapse2").sideNav({
+	$('.parallax').parallax();
+	$('.carousel').carousel();
+	$('.button-collapse').sideNav();
+  $('.button-collapse2').sideNav({
       menuWidth: 300, // Default is 300
       edge: 'left', // Choose the horizontal origin
       closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
@@ -26,5 +28,5 @@ $ (document).ready(function() {
     format: 'dd/mm/yyyy'
   });
   $('select').material_select();
-  $('.carousel').carousel();
+  
 });

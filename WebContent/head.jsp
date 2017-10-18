@@ -27,7 +27,7 @@
                         <a href="#!email"><span class="white-text email">${usuario.email}</span></a>
                </c:if>
       </div></li>
-      <li><a href="#!"><i class="material-icons">account_circle</i>Meu perfil</a></li>
+      <li><a href="perfil.jsp"><i class="material-icons">account_circle</i>Meu perfil</a></li>
       <li><a class="waves-effect waves-light modal-trigger" href="#modal1"><i class="material-icons">publish</i>Cadastrar tcc</a></li>
       <li><a href="#" data-activates="slide-out2" class="button-collapse2 show-on-large"><i class="material-icons">search</i>Pesquisar tcc</a></li>
       <li><a href="Logout"><i class="material-icons">power_settings_new</i>Logout</a></li>

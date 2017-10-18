@@ -18,31 +18,34 @@
 		<h5>Mais Tccs Orientados por ${tcc.orientador}</h5>
 		<div class="carousel">
 			<c:forEach var="trabalho" items="${listaOrientador}">
-				<div class="carousel-item">
-			    	<div class="card grey lighten-4">
-			            <div class="card-content">
-			              <span class="card-title">Titulo: ${trabalho.titulo} <br> Autor: ${trabalhor.autor}</span>
-			              <p>Ano: ${trabalho.ano}</p>
-			            </div>
-			          </div>
-			    </div>
+				<ul class="collection">
+	              <li class="collection-item avatar">
+	                <span class="title"><a href="PaginaTcc?titulo=${trabalho.titulo}">Título: ${trabalho.titulo}</a></span>
+	                <p>Autor: ${trabalho.autor}
+	                </p>
+	                <a href="#!" class="secondary-content">Ano: ${trabalho.ano}</a>
+	              </li>
+	            </ul>
 			</c:forEach>
 		    
 		  </div>
 		  <h5>Mais Tccs na área de ${tcc.area}</h5>
 		<div class="carousel">
 			<c:forEach var="trabalho" items="${listaArea}">
-				<div class="carousel-item">
-			    	<div class="card grey lighten-4">
-			            <div class="card-content">
-			              <span class="card-title"><a href="PaginaTcc?titulo=${trabalho.titulo}">Titulo: ${trabalho.titulo}</a> <br> Autor: ${trabalhor.autor}</span>
-			              <p>Ano: ${trabalho.ano}</p>
-			            </div>
-			          </div>
-			    </div>
+				<ul class="collection">
+	              <li class="collection-item avatar">
+	                <span class="title"><a href="PaginaTcc?titulo=${trabalho.titulo}">Título: ${trabalho.titulo}</a></span>
+	                <p>Autor: ${trabalho.autor}
+	                </p>
+	                <a href="#!" class="secondary-content">Ano: ${trabalho.ano}</a>
+	              </li>
+	            </ul>
 			</c:forEach>
 		    
 		  </div>
 	</div>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/plugin.js"></script>
 </body>
 </html>

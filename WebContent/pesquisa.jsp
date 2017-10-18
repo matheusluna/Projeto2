@@ -26,7 +26,7 @@
 	              <li class="collection-item avatar">
 	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
 	                <p>Autor: ${tcc.autor} <br>
-	                 Orientados: ${tcc.orientador}
+	                 Orientador: ${tcc.orientador}
 	                </p>
 	                <a href="#!" class="secondary-content">Ano: ${tcc.ano}</a>
 	              </li>
@@ -42,7 +42,7 @@
 	              <li class="collection-item avatar">
 	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
 	                <p>Autor: ${tcc.autor} <br>
-	                   Orientados: ${tcc.orientador}
+	                   Orientador: ${tcc.orientador}
 	                </p>
 	                <a href="#!" class="secondary-content">Ano: ${tcc.ano}</a>
 	              </li>
@@ -58,7 +58,7 @@
 	              <li class="collection-item avatar">
 	                <span class="title"><a href="PaginaTcc?titulo=${tcc.titulo}">Título: ${tcc.titulo}</a></span>
 	                <p>Autor: ${tcc.autor} <br>
-	                   Orientados: ${tcc.orientador}
+	                   Orientador: ${tcc.orientador}
 	                </p>
 	                <a href="#!" class="secondary-content">Ano: ${tcc.ano}</a>
 	              </li>
