@@ -50,7 +50,7 @@ public class CadastroTcc extends HttpServlet {
 		// TODO Auto-generated method stub
 		DaoTcc dao = new DaoTcc();
 		DaoTccNeo4j neo = new DaoTccNeo4j();
-		response.setContentType("text/html;charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		try {
 			UpLoadPdf pdf = new UpLoadPdf();
 			String autor = request.getParameter("autor");
